@@ -27,7 +27,7 @@ def cloning():
 		a=data["access_token"]
 	except KeyError:
 		exit("%s[!]%s Failed when generate access token !!"%(M,P))
-	print '\n\x1b[1;91m[\x1b[1;96m\xe2\x97\x8f\x1b[1;91m]\x1b[1;97m Tool \x1b[1;91m: \x1b[1;92mYahoo Checker Beta'
+	print '%s[*] %sTool : Yahoo Checker Beta'
 	print "%s[*] %sFetching all user id "%(H,P)
 	sleep(1)
 	try:
