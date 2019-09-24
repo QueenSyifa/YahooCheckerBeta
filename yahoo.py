@@ -1,13 +1,5 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
-import os
-import re
-import sys
-import requests
-import mechanize
-from time import sleep
-from getpass import getpass
+import os, re, sys, requests, mechanize, sleep, getpass
+from time, getpass
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -34,9 +26,9 @@ def cloning():
 	try:
 		a=data["access_token"]
 	except KeyError:
-		exit("%s[!]%s failed when generate access token !!"%(M,P))
-	print "----------------------------------------"
-	print "%s[*] %sfetching all user id "%(H,P)
+		exit("%s[!]%s Failed when generate access token !!"%(M,P))
+	print '\n\x1b[1;91m[\x1b[1;96m\xe2\x97\x8f\x1b[1;91m]\x1b[1;97m Tool \x1b[1;91m: \x1b[1;92mYahoo Checker Beta'
+	print "%s[*] %sFetching all user id "%(H,P)
 	sleep(1)
 	try:
 		for x in s.get(url.format("me/friends?access_token=%s"%(a))).json()["data"]:
@@ -45,12 +37,11 @@ def cloning():
 			sys.stdout.flush()
 			sleep(0.003)
 	except KeyError:
-		print "\n%s[!] %sfailed to retrive all user id"%(M,P)
-		exit("%s[!] %sstopped"%(M,P))
-	print "\n%s[*] %sall user id successfuly retrieved"%(H,P)
-	print "%s[*] %sgetting email friends"%(H,P)
-	print "%s[*] %sstart"%(H,P)
-	print "----------------------------------------"
+		print "\n%s[!] %sFailed to retrive all user id"%(M,P)
+		exit("%s[!] %sStopped"%(M,P))
+	print "\n%s[*] %sAll user id successfuly retrieved"%(H,P)
+	print "%s[*] %sGetting email friends"%(H,P)
+	print "%s[*] %sStart"%(H,P)
 	o=open("mail_DIE.txt","w")
 	for meki in target:
 		try:
@@ -86,14 +77,6 @@ def cloning():
 
 if __name__=="__main__":
 	os.system("clear")
-	print """%s
- \ /                __                  
-  Y  _ |_  _  _    /  |_  _  _  |  _  __
-  | (_|| |(_)(_)   \__| |(/_(_  |<(/_ | 
-%s----------------------------------------%s
-%s  Coded  : Queen Syifa                  %s%s
-%s  Github : https://github.com/QueenSyifa%s
-%s----------------------------------------
- """%(H,P,M,B,R,M,B,R,P)
+	print ""%(H,P,M,B,R,M,B,R,P)
  
  	cloning()
