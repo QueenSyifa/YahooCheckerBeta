@@ -1,5 +1,10 @@
-import os, sys, time, datetime, random, hashlib, re, threading, json, getpass, urllib, requests, mechanize
-from multiprocessing.pool import ThreadPool
+import os
+import re
+import sys
+import requests
+import mechanize
+from time import sleep
+from getpass import getpass
 
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -26,8 +31,9 @@ def cloning():
 	try:
 		a=data["access_token"]
 	except KeyError:
-		exit("%s[!]%s Failed when generate access token !!"%(M,P))
-	print '%s[*] %sTool : Yahoo Checker Beta'
+		exit("%s[!]%s failed when generate access token !!"%(M,P))
+	print "----------------------------------------"
+	print "%s[*] %sTools : Yahoo Checker Beta "%(H,P)
 	print "%s[*] %sFetching all user id "%(H,P)
 	sleep(1)
 	try:
@@ -42,6 +48,7 @@ def cloning():
 	print "\n%s[*] %sAll user id successfuly retrieved"%(H,P)
 	print "%s[*] %sGetting email friends"%(H,P)
 	print "%s[*] %sStart"%(H,P)
+	print "----------------------------------------"
 	o=open("mail_DIE.txt","w")
 	for meki in target:
 		try:
@@ -69,21 +76,18 @@ def cloning():
 					print "%s[•]%s Status    : %sVuln\n"%(H,P,H)
 		except KeyError:pass
 		except requests.exceptions.ConnectionError:
-			print "%s[!]%s no connection"%(M,P)
-			exit("%s[!]%s stopped"%(M,P))
+			print "%s[!]%s No connection"%(M,P)
+			exit("%s[!]%s Stopped"%(M,P))
 	o.close()
-	print "\n%s[+]%s done.."%(H,P)
-	exit("%s[#] %sfile saved in: %smail_DIE.txt"%(H,P,H))
+	print "\n%s[+]%s Done.."%(H,P)
+	exit("%s[#] %sFile saved in: %smail_DIE.txt"%(H,P,H))
 
 if __name__=="__main__":
 	os.system("clear")
 	print """%s
- \ /                __                  
-  Y  _ |_  _  _    /  |_  _  _  |  _  __
-  | (_|| |(_)(_)   \__| |(/_(_  |<(/_ | 
 %s----------------------------------------%s
-%s  Coded  :                              %s%s
-%s  Github :                              %s
+%s  Coded  : Queen Syifa                  %s%s
+%s  Github : https://github.com/QueenSyifa%s
 %s----------------------------------------
  """%(H,P,M,B,R,M,B,R,P)
  
