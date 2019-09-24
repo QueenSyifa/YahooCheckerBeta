@@ -1,4 +1,3 @@
-
 #!/usr/bin/python
 
 import os
@@ -88,6 +87,5 @@ def cloning():
 	exit("%s[#] %sfile saved in: %smail_DIE.txt"%(H,P,H))
 
 if __name__=="__main__":
-	print logo
  	cloning()
 	
