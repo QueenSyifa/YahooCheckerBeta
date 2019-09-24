@@ -35,7 +35,7 @@ def cloning():
 		a=data["access_token"]
 	except KeyError:
 		exit("%s[!]%s failed when generate access token !!"%(M,P))
-	print "%s[*] %sTool : Yahoo Checker Beta"	
+	print "Tool : Yahoo Checker Beta\n"	
 	print "----------------------------------------"
 	print "%s[*] %sfetching all user id "%(H,P)
 	sleep(1)
@@ -88,12 +88,9 @@ def cloning():
 if __name__=="__main__":
 	os.system("clear")
 	print """%s
- \ /                __                  
-  Y  _ |_  _  _    /  |_  _  _  |  _  __
-  | (_|| |(_)(_)   \__| |(/_(_  |<(/_ | 
 %s----------------------------------------%s
-%s  Coded  :                              %s%s
-%s  Github : https://github.com/          %s
+%s  Coded  : Queen Syifa                  %s%s
+%s  Github : https://github.com/QueenSyifa%s
 %s----------------------------------------
  """%(H,P,M,B,R,M,B,R,P)
  
