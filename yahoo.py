@@ -1,25 +1,17 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import os
-import re
-import sys
-import requests
-import mechanize
-from time import sleep
-from getpass import getpass
+import os, sys, time, datetime, random, hashlib, re, threading, json, getpass, urllib, requests, mechanize
+from multiprocessing.pool import ThreadPool
 
+from requests.exceptions import ConnectionError
+from mechanize import Browser
 reload(sys)
 sys.setdefaultencoding('utf8')
-br=mechanize.Browser()
-br.set_handle_equiv(True)
-br.set_handle_gzip(True)
-br.set_handle_redirect(True) 
-br.set_handle_referer(True)
+br = mechanize.Browser()
 br.set_handle_robots(False)
-br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(),max_time=1)
-br.addheaders=[('User-Agent','Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.12.423 Version/12.16')]
-s=requests.Session()
+br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
+br.addheaders = [('User-Agent', 'Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.12.423 Version/12.16')]
 
 M="\033[0;91m"
 P="\033[0;97m"
@@ -97,4 +89,3 @@ if __name__=="__main__":
  """%(H,P,M,B,R,M,B,R,P)
  
  	cloning()
-	
